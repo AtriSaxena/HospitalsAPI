@@ -3,7 +3,7 @@ from .models import Hospitals
 import csv
 
 path = 'Hospital_with_discipline_jul_15.csv'
-with open(path) as f:
+with open(path,encoding='ISO-8859-1') as f:
     reader = csv.reader(f)
     for row in reader:
         _, created = Hospitals.objects.get_or_create(
