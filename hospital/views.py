@@ -48,3 +48,17 @@ class HospitalName(APIView):
                 serializer = HospitalsSerializer(queryset, many=True)
                 return Response(serializer.data, status = status.HTTP_200_OK)
         
+class HospitalAdd(APIView):
+    def get_object(self,id):
+        print("Id of object {}".format(id))
+        try:
+            return Hospitals.objects.get(id=id) 
+        except Hospitals.DoesNotExist:
+            raise Http404
+    def get(self, request, id,format=None):
+        hid = self.get_object(id) 
+        print(hid)
+        #queryset = Hospitals.objects.filter(id=hid)
+        serializer = HospitalsSerializer(hid)
+        return Response(serializer.data)
+        
