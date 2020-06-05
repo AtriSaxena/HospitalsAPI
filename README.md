@@ -1,5 +1,10 @@
 # HospitalsAPI
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+
+
 Django REST API for getting list of Hospitals.
+
 
 This is hosted on heroku server.
 
